@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import './index.css';
+import '../../../index.css';
 import {
   Form,
   Input,
@@ -9,47 +8,36 @@ import {
   Button,
 } from 'antd';
 
-const formItemLayout = {
-  labelCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 8,
-    },
-  },
-  wrapperCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 16,
-    },
-  },
+const document = {
+
+}
+
+const onFinish = values => {
+  console.log('Данные для регистрации: ', values);
 };
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
+
 
 const Registration = () => {
   const [form] = Form.useForm();
 
-  const onFinish = values => {
-    console.log('Данные для регистрации: ', values);
-  };
+
+ 
+ const formLayout="vertical";
+  const formItemLayout =
+ 
+       {
+          labelCol: { span: 8 },
+          wrapperCol: { span: 20 },
+        }
+
+
+
+
 
   return (
     <Form
       {...formItemLayout}
+      layout={formLayout}
       form={form}
       name="register"
       onFinish={onFinish}
@@ -107,11 +95,29 @@ const Registration = () => {
         ]}
       >
         <Input.Password />
+      </Form.Item >
+      <Form.Item 
+      name="character"
+      label="Роль">
+          <Select>
+            <Select.Option value="Пользователь">Пользователь</Select.Option>
+            <Select.Option value="Игрок">Игрок</Select.Option>
+          </Select>
       </Form.Item>
-
-
-
-      <Form.Item {...tailFormItemLayout}>
+      <Form.Item 
+      name="project"
+       label="Проект">
+          <Select>
+            <Select.Option value="ООО Ромашка">ООО Ромашка</Select.Option>
+            <Select.Option value="Игрок">Игрок</Select.Option>
+          </Select>
+      </Form.Item>
+        <div {...document}>
+          <p>Нажимая кнопку "Зарегистрироваться", я соглашаюсь с <a> политикой конфиденциальности</a> и <a>обработкой персональных данных</a>
+          </p>
+          <br/>
+        </div>
+      <Form.Item >
         <Button type="primary" htmlType="submit">
           Зарегистрироваться
         </Button>

@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Mapp from './EnterModal';
-import RegApp from './registrModal';
+import EnterModalHooks from './AuthModal/blocks/Modal/EnterModalHooks';
+import RegistrationAppHooks from './AuthModal/blocks/Modal/RegistrationModalHooks';
 import * as serviceWorker from './serviceWorker';
 
 
 
 ReactDOM.render(<React.StrictMode>
-  <div className='container'><Mapp /><RegApp /></div>  
+  <div className='container'><EnterModalHooks /><RegistrationAppHooks /></div>  
    </React.StrictMode>, 
    document.getElementById('container'));
-
 
 
 

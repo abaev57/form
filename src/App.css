@@ -40,11 +40,19 @@
 .ant-modal p {
   margin: 0;
 }
-a {
-  margin: 0;
-  padding: 0;
-  padding-left: 40px;
+
+footer {
+  display: none;
 }
+
 .modal {
-  margin: 20px;
+  margin-left: 20px;
 }
+
+.button {
+  display: none;
+}
+.remember {
+  display: flex;
+}
+
